@@ -202,7 +202,7 @@ foreach ($this->jsonData as $item) {
             }
         }
 
-        bdump($this->template->table = $this->validItems);
+        $this->template->table = $this->validItems;
     }
       
     private function calculateExpression($expression)
