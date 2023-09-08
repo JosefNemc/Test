@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testovací Meme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Styl pro DIV obsahující obrázek meme */
+        .meme-container {
+            position: relative;
+            max-width: 600px; /* Nastavte šířku podle potřeby */
+            margin: 0 auto;
+        }
+
+        /* Styl pro text v horní části obrázku meme */
+        .top-text {
+            position: absolute;
+            top: 20px; /* Pozice textu od horního okraje */
+            left: 10px; /* Pozice textu od levého okraje */
+            font-size: 25px; /* Velikost textu */
+            color: white; /* Barva textu */
+        }
+
+        /* Styl pro text v dolní části obrázku meme */
+        .bottom-text {
+            position: absolute;
+            bottom: 20px; /* Pozice textu od dolního okraje */
+            left: 10px; /* Pozice textu od levého okraje */
+            font-size: 25px; /* Velikost textu */
+            color: white; /* Barva textu */
+        }
+
+        /* Styl pro obrázek meme (pozadí) */
+        .meme-image {
+            max-width: 100%;
+            display: block;
+        }
+    </style>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{link home:default}">Testovací úloha Nette</a>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link"  href="{link home:app1}">App1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{link home:app2}">App2</a>
+            </li>
+			 <li class="nav-item">
+              <a class="nav-link"  href="{link home:app3}">App3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{link home:app4}">App4</a>
+            </li>
+			 <li class="nav-item">
+              <a class="nav-link"  href="{link home:app5}">App5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{link home:app6}">App6</a>
+            </li>
+           
+            
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+     {ifset $title}
+    <h1>{$title}</h1>
+    {/ifset}  
+      
+	  {ifset $meme}
+     <!-- DIV obsahující obrázek meme a text -->
+    <div class="meme-container">
+        <!-- Obrázek meme (pozadí) -->
+        <img src="https://www.digilabs.cz/hiring/chuck.jpg" alt="Chuck Norris Meme" class="meme-image">
+
+        <!-- Text v horní části obrázku meme -->
+        <div class="top-text">{$meme[0]}</div>
+
+        <!-- Text v dolní části obrázku meme -->
+        <div class="bottom-text">{$meme[1]}</div>
+    </div>
+    {/ifset}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
